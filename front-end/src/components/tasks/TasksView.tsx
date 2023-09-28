@@ -9,11 +9,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import {
-  TasksContent,
-  TasksMenu,
-  TasksDate,
-} from '../../styles/tasks/TasksView.styled';
+import { TasksDate } from '../../styles/tasks/TasksView.styled';
 import { useAuthHeader } from 'react-auth-kit';
 import SERVER_URL from '../../config/config';
 import Loading from '../loading/Loading';
@@ -168,7 +164,7 @@ const TasksView = () => {
             <div className="flex w-full h-10 items-center justify-between">
               <div className="flex items-center h-full gap-2">
                 <h1 className="text-3xl font-bold">New Tasks</h1>
-                <div className="text-main  w-[50px] h-[50px] rounded-xl flex justify-center items-center border border-main bg-[#202123]">
+                <div className="text-main  w-[50px] h-[50px] rounded-xl flex justify-center items-center border border-main bg-[#202123] font-bold">
                   {newTaskCount}
                 </div>
               </div>
@@ -241,9 +237,9 @@ const TasksView = () => {
                             </DropdownMenuContent>
                           </DropdownMenu>
                         </div>
-                        <TasksDate>
+                        <div className="text-white/50">
                           <p>{task.date}</p>
-                        </TasksDate>
+                        </div>
                       </div>
                     );
                   }
@@ -257,7 +253,7 @@ const TasksView = () => {
             <div className="flex w-full h-10 items-center justify-between">
               <div className="flex items-center h-full gap-2">
                 <h1 className="text-3xl font-bold">Completed</h1>
-                <div className="text-main  w-[50px] h-[50px] rounded-xl flex justify-center items-center border border-main bg-[#202123]">
+                <div className="text-main  w-[50px] h-[50px] rounded-xl flex justify-center items-center border border-main bg-[#202123] font-bold">
                   {completedTask}
                 </div>
               </div>
@@ -330,9 +326,9 @@ const TasksView = () => {
                             </DropdownMenuContent>
                           </DropdownMenu>
                         </div>
-                        <TasksDate>
+                        <div className="text-white/50">
                           <p>{task.date}</p>
-                        </TasksDate>
+                        </div>
                       </div>
                     );
                   }
