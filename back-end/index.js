@@ -16,11 +16,7 @@ mongoose
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
-<<<<<<< HEAD
   'http://localhost:8080',
-=======
-  'https://dynamic-scone-61b6b0.netlify.app',
->>>>>>> 2f56c337cb9bc6b8b40614bc16f578af03aac476
 ];
 
 app.use(
