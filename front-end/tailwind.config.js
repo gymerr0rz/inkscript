@@ -67,12 +67,21 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        slide: {
+          '0%': {
+            transform: 'translateX(0) translateZ(0px)',
+          },
+          '100%': {
+            transform: 'translateX(-250px) translateZ(0px)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        slide: 'slide 10s linear infinite',
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [],
 };
