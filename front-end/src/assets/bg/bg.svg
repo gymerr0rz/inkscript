@@ -1,7 +1,5 @@
-const Background = () => {
-  return (
     <svg
-      className="absolute -z-[99] top-0 left-1/2 -translate-x-1/2 w-full"
+      width="1920"
       height="1221"
       viewBox="0 0 1900 1221"
       fill="none"
@@ -480,7 +478,4 @@ const Background = () => {
         </clipPath>
       </defs>
     </svg>
-  );
-};
 
-export default Background;

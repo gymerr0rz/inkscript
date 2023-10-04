@@ -9,7 +9,6 @@ import {
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { TasksDate } from '../../styles/tasks/TasksView.styled';
 import { useAuthHeader } from 'react-auth-kit';
 import SERVER_URL from '../../config/config';
 import Loading from '../loading/Loading';
@@ -35,7 +34,6 @@ const TasksView = () => {
   const [completeTask, setCompleteTask] = useState(false);
   const [addTask, setAddTask] = useState(false);
   const [newTitle, setNewTitle] = useState<string>();
-  const [completedTitle, setCompleteTitle] = useState<string>();
   const header = useAuthHeader();
 
   const updateTasks = () => {

@@ -11,9 +11,12 @@ const Loading = () => {
 
   for (let i = 0; i < 4; i++) {
     tasksContent.push(
-      <TasksContent className="tasks-content" key={i}>
-        <TasksMenu>
-          <div className="abc">
+      <div
+        className="tasks-content w-full bg-bg p-5 rounded-xl gap-5 flex flex-col"
+        key={i}
+      >
+        <div className="flex">
+          <div className="flex gap-2">
             <Skeleton variant="circular" sx={{ bgcolor: '#414040' }}>
               <CheckCircle color="#8D8D8D" />
             </Skeleton>
@@ -24,16 +27,16 @@ const Loading = () => {
               animation="wave"
             />
           </div>
-        </TasksMenu>
-        <TasksDate>
+        </div>
+        <div>
           <Skeleton
             variant="text"
             sx={{ fontSize: '1rem', bgcolor: '#414040' }}
             width="300px"
             animation="wave"
           />
-        </TasksDate>
-      </TasksContent>
+        </div>
+      </div>
     );
   }
 

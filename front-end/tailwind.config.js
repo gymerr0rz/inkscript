@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        hero: 'url(src/assets/bg/test.png)',
+      },
       colors: {
         main: '#6364FF',
         bg: '#202123',
