@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navbar from '../components/mainpage/navbar/Navbar';
 import appDemo from '../assets/app-demo.png';
-import Background from '../components/mainpage/bg/Background';
 import Slider from '../components/mainpage/slider/Slider';
 import TasksDemo from '../assets/card-demo/tasks.png';
 
 const MainPage = () => {
-  const [active, setActive] = useState<boolean | null>(null);
   const [scroll, setScroll] = useState<number>();
 
   useEffect(() => {
@@ -271,7 +268,7 @@ const MainPage = () => {
                         </svg>
                       </div>
                     </div>
-                    <h1>Subscription with levels.</h1>
+                    <h1>Write Encrypted Notes.</h1>
                   </div>
                 </li>
                 <li>
@@ -292,7 +289,7 @@ const MainPage = () => {
                         </svg>
                       </div>
                     </div>
-                    <h1>Subscription with levels.</h1>
+                    <h1>Write Encrypted Tasks.</h1>
                   </div>
                 </li>
                 <li>
@@ -313,7 +310,7 @@ const MainPage = () => {
                         </svg>
                       </div>
                     </div>
-                    <h1>Subscription with levels.</h1>
+                    <h1>Pomodoro Technique.</h1>
                   </div>
                 </li>
                 <li>
@@ -334,7 +331,7 @@ const MainPage = () => {
                         </svg>
                       </div>
                     </div>
-                    <h1>Subscription with levels.</h1>
+                    <h1>Product Assistance.</h1>
                   </div>
                 </li>
                 <li>
@@ -355,70 +352,7 @@ const MainPage = () => {
                         </svg>
                       </div>
                     </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
+                    <h1>Weather Application.</h1>
                   </div>
                 </li>
               </ul>
@@ -426,403 +360,7 @@ const MainPage = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex justify-center items-center py-2 to-[#212295]  from-main bg-gradient-to-b rounded-sm tracking-tighter"
-              >
-                Get the plan
-              </a>
-            </div>
-          </div>
-          <div
-            id="card"
-            className="min-w-[400px] from-transparent to-main/20 from-45% bg-gradient-to-b p-px rounded-sm"
-          >
-            <div className="from-[#090918] from-10% to-90% to-[#090918] via-[#070712] bg-gradient-to-br  w-full h-full rounded-sm p-10 text-white">
-              <h1>Starter</h1>
-              <div className="flex gap-2 items-center">
-                <h1 className="from-white to-main bg-gradient-to-b text-6xl font-bold tracking-tighter bg-clip-text text-transparent">
-                  $50
-                </h1>
-                <div className="flex flex-col">
-                  <p>/month</p>
-                  <p>(billed annually)</p>
-                </div>
-              </div>
-              <div id="divider" className="py-6">
-                <div className="from-transparent  to-transparent via-main bg-gradient-to-r h-[2px]"></div>
-              </div>
-              <ul className="flex flex-col gap-5 py-5">
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-              </ul>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex justify-center items-center py-2 to-[#212295]  from-main bg-gradient-to-b rounded-sm tracking-tighter"
-              >
-                Get the plan
-              </a>
-            </div>
-          </div>
-          <div
-            id="card"
-            className="min-w-[400px] from-transparent to-main/20 from-45% bg-gradient-to-b p-px rounded-sm"
-          >
-            <div className="from-[#090918] from-10% to-90% to-[#090918] via-[#070712] bg-gradient-to-br  w-full h-full rounded-sm p-10 text-white">
-              <h1>Starter</h1>
-              <div className="flex gap-2 items-center">
-                <h1 className="from-white to-main bg-gradient-to-b text-6xl font-bold tracking-tighter bg-clip-text text-transparent">
-                  $50
-                </h1>
-                <div className="flex flex-col">
-                  <p>/month</p>
-                  <p>(billed annually)</p>
-                </div>
-              </div>
-              <div id="divider" className="py-6">
-                <div className="from-transparent  to-transparent via-main bg-gradient-to-r h-[2px]"></div>
-              </div>
-              <ul className="flex flex-col gap-5 py-5">
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex gap-2">
-                    <div
-                      id="triangle-icon"
-                      className="w-[25px] h-[25px] from-transparent to-main bg-gradient-to-b p-px rounded-full"
-                    >
-                      <div className="w-full h-full rounded-full bg-[#05050f] flex justify-center items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="8"
-                          height="8"
-                          viewBox="0 0 24 24"
-                          fill="#ffffff"
-                        >
-                          <path d="M24 22h-24l12-20z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <h1>Subscription with levels.</h1>
-                  </div>
-                </li>
-              </ul>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex justify-center items-center py-2 to-[#212295]  from-main bg-gradient-to-b rounded-sm tracking-tighter"
+                className="w-full flex justify-center items-center  bg-gradient-to-b from-main to-main/50 py-2 px-5 rounded-sm hover:bg-main/80 transition-colors "
               >
                 Get the plan
               </a>

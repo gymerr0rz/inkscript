@@ -3,7 +3,7 @@ import Logo from '../../../assets/logo/logowhite.png';
 
 const Navbar = () => {
   return (
-    <nav className=" backdrop-blur-sm relative">
+    <nav className=" backdrop-blur-sm relative z-[200]">
       <div className=" bg-gradient-to-r from-transparent via-main to-transparent absolute bottom-0 h-[1px] w-full "></div>
       <div className="text-white max-w-[1620px] mx-auto  grid grid-cols-3 items-center py-5 px-5">
         <div className="justify-self-start flex gap-2 items-center">

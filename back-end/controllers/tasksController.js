@@ -119,7 +119,7 @@ const delete_task = async (req, res) => {
 };
 
 const modify_task = async (req, res) => {
-  const { title } = req.body;
+  const { id } = req.params;
 
   if (!title) return res.sendStatus(403);
 

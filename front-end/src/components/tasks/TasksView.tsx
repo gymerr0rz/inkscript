@@ -18,7 +18,18 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '../../components/ui/dialog.tsx';
+import { Input } from '../../components/ui/input.tsx';
+import { Label } from '../../components/ui/label.tsx';
+import { Button } from '../../components/ui/button.tsx';
 interface ITask {
   origin: string;
   title: string;
@@ -61,6 +72,7 @@ const TasksView = () => {
       setNewTaskCount(0);
       setCompletedTask(0);
       newTasks.forEach((task) => {
+        console.log(task);
         if (task.origin === 'new_tasks') {
           console.log('Added count to new task!');
           setNewTaskCount((prevCount) => prevCount + 1);
@@ -94,10 +106,19 @@ const TasksView = () => {
       });
   };
 
-  const handleEdit = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(e.currentTarget.innerText);
+  const handleEdit = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = e.target as HTMLDivElement;
+    const origin = el.getAttribute('data-id');
+    axios
+      .delete(`${SERVER_URL}/user/editTask/${origin}`)
+      .then((response) => {
+        console.log(response);
+        updateTasks();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-
   const handleNewKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const el = e.target as HTMLInputElement;
     const origin = el.getAttribute('data-origin');
@@ -193,7 +214,7 @@ const TasksView = () => {
                         className="bg-transparent   w-full outline-none "
                         onKeyDown={(e) => handleNewKey(e)}
                         onChange={(e) => setNewTitle(e.target.value)}
-                        data-origin="new-tasks"
+                        data-origin="new_tasks"
                       />
                     </div>
                   </div>
@@ -212,28 +233,65 @@ const TasksView = () => {
                             />
                             <h1 onClick={(e) => handleEdit(e)}>{task.title}</h1>
                           </div>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger>
-                              <MoreVertical className="vertical" />
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent>
-                              <DropdownMenuItem>
-                                <Edit className="mr-2 h-4 w-4" />
-                                <span>Edit</span>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem
-                                onClick={(e) => handleDelete(e)}
-                                data-id={task._id}
-                              >
-                                <Delete className="mr-2 h-4 w-4" />
-                                <span>Delete</span>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem>
-                                <Verified className="mr-2 h-4 w-4" />
-                                <span>Set As Completed</span>
-                              </DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
+                          <Dialog>
+                            <DropdownMenu>
+                              <DropdownMenuTrigger>
+                                <MoreVertical className="vertical" />
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent>
+                                <DialogTrigger asChild>
+                                  <DropdownMenuItem>
+                                    <Edit className="mr-2 h-4 w-4" />
+                                    <span>Edit</span>
+                                  </DropdownMenuItem>
+                                </DialogTrigger>
+                                <DropdownMenuItem
+                                  onClick={(e) => handleDelete(e)}
+                                  data-id={task._id}
+                                >
+                                  <Delete className="mr-2 h-4 w-4" />
+                                  <span>Delete</span>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem>
+                                  <Verified className="mr-2 h-4 w-4" />
+                                  <span>Set As Completed</span>
+                                </DropdownMenuItem>
+                              </DropdownMenuContent>
+                            </DropdownMenu>
+                            <DialogContent className="sm:max-w-[425px]">
+                              <DialogHeader>
+                                <DialogTitle>
+                                  Edit the existing task?
+                                </DialogTitle>
+                                <DialogDescription>
+                                  Write your new task title!
+                                </DialogDescription>
+                              </DialogHeader>
+                              <div className="grid gap-4 py-4">
+                                <div className="grid grid-cols-4 items-center gap-4">
+                                  <Label htmlFor="title" className="text-right">
+                                    Title
+                                  </Label>
+                                  <Input
+                                    id="title"
+                                    className="col-span-3"
+                                    placeholder="Write title..."
+                                    required
+                                  />
+                                </div>
+                              </div>
+                              <DialogFooter>
+                                <Button
+                                  variant="submit"
+                                  type="submit"
+                                  onClick={handleEdit}
+                                  data-id={task._id}
+                                >
+                                  Edit
+                                </Button>
+                              </DialogFooter>
+                            </DialogContent>
+                          </Dialog>
                         </div>
                         <div className="text-white/50">
                           <p>{task.date}</p>

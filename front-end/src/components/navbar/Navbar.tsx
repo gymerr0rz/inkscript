@@ -47,8 +47,8 @@ const Navbar = () => {
                 id="logo"
                 className="h-[50px] w-[50px]  mb-2"
               />
-              <h1 className="text-3xl font-black">Inkscript</h1>
-              <p>Workspace</p>
+              <h1 className="text-3xl font-bold tracking-tight">Inkscript</h1>
+              <p className="uppercase text-sm font-light">Workspace</p>
               <div className="navBtn flex justify-between items-center mt-10 flex-col">
                 <Link to="/app">
                   <NavButton icon="Home" name="Home" />

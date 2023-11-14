@@ -64,15 +64,20 @@ const SetupProfile = () => {
       ) : (
         <div>
           {!user.email_confirmed ? (
-            <SetupContainer>
-              <Introduction>
+            <div className="text-white/70 w-screen h-screen flex justify-center items-center text-center">
+              <div>
                 <p>Confirming email address...</p>
                 <p>
                   When you have confirmed the email, please refresh the site.
                 </p>
-                <a onClick={() => handleRetry()}>Send request.</a>
-              </Introduction>
-            </SetupContainer>
+                <a
+                  onClick={() => handleRetry()}
+                  className="text-main hover:underline cursor-pointer"
+                >
+                  Retry.
+                </a>
+              </div>
+            </div>
           ) : null}
         </div>
       )}

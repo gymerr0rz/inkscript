@@ -1,19 +1,13 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  AuthContainer,
-  AuthBox,
-  AuthInputs,
-  AuthBtn,
-} from '../../styles/Auth.styled';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, ToastOptions, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSignIn } from 'react-auth-kit';
 import SERVER_URL from '../../config/config';
+import Logo from '../../assets/logo/logowhite.png';
 
-// Toasty Interface Options
-const options = {
+const options: ToastOptions = {
   position: 'top-right',
   autoClose: 3000,
   hideProgressBar: false,
@@ -25,13 +19,13 @@ const options = {
 };
 
 const RegisterPage = () => {
-  const [username, setUsername] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const signIn = useSignIn();
 
-  function onFormSubmit(e) {
+  function onFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     console.log('Creating account');
     e.preventDefault();
 
@@ -57,52 +51,67 @@ const RegisterPage = () => {
 
   return (
     <>
-      <AuthContainer>
+      <section className="mx-auto px-5 w-screen bg-[#121215] h-screen">
         <ToastContainer />
-        <AuthBox>
-          <h1>INKWELL</h1>
-          <p>
-            Organize your life, boost your productivity - all with our notes and
-            Pomodoro app!
-          </p>
-          <form id="login" onSubmit={onFormSubmit}>
-            <div className="labels">
+        <div className="flex justify-center items-center h-full flex-col">
+          <div className="text-white flex items-center flex-col gap-2 justify-center">
+            <img src={Logo} alt=" " className="max-w-[20px]" />
+            <h1 className=" text-4xl font-bold tracking-tighter">INKSCRIPT</h1>
+            <p className="w-[400px] text-center text-sm text-white/70">
+              Organize your life, boost your productivity - all with our notes
+              and Pomodoro app!
+            </p>
+          </div>
+          <form
+            id="login"
+            onSubmit={onFormSubmit}
+            className="flex justify-center flex-col items-center"
+          >
+            <div className="flex-col flex bg-[#0a0b0c] justify-center text-white px-5 min-w-[504px] min-h-[53px] rounded-md border-none font-black m-2 py-2">
               <label htmlFor="email">EMAIL</label>
-              <AuthInputs
+              <input
+                className="bg-transparent outline-none font-medium"
                 type="email"
                 id="email"
-                placeholder="john@example.com"
+                placeholder="john.doe@gmail.com"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="labels">
+            <div className="flex-col flex bg-[#0a0b0c] justify-center text-white px-5 min-w-[504px] min-h-[53px] rounded-md border-none font-black m-2 py-2">
               <label htmlFor="username">USERNAME</label>
-              <AuthInputs
+              <input
+                className="bg-transparent outline-none font-medium"
                 type="text"
-                placeholder="john1234"
+                placeholder="john.doe"
                 id="username"
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
-            <div className="labels">
+            <div className="flex-col flex bg-[#0a0b0c] justify-center text-white px-5 min-w-[504px] min-h-[53px] rounded-md border-none font-black m-2 py-2">
               <label htmlFor="password">PASSWORD</label>
-              <AuthInputs
+              <input
+                className="bg-transparent outline-none font-medium "
                 id="password"
                 type="password"
-                placeholder="password123"
+                placeholder="**********"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <AuthBtn type="submit" value="REGISTER" />
+            <button className="my-5 py-3 px-8 rounded-md border border-[#0085ff] bg-[rgba(0,133,244,0.2)] text-white font-bold ">
+              REGISTER
+            </button>
           </form>
-          <p>
+          <p className="text-white flex gap-1 text-sm">
             Already have an account?
-            <b>
-              <Link to="/auth/login"> Login!</Link>
-            </b>
+            <Link
+              to="/auth/login"
+              className="font-medium text-main hover:underline"
+            >
+              Login!
+            </Link>
           </p>
-        </AuthBox>
-      </AuthContainer>
+        </div>
+      </section>
     </>
   );
 };
